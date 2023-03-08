@@ -250,4 +250,16 @@ public:
         }
         return compress.size();
     }
+
+    int findKthPositive(vector<int>& arr, int k) {
+        int r = arr.size() + k;
+        // if (arr.size() == 1 && k < arr[0])
+        //     return k;
+        for (int i=arr.size()-1;i>-1;i--) {
+            if (arr[i]>=r) {
+                r--;
+            }
+        }
+return r;
+    }
 };
